@@ -1,0 +1,13 @@
+pEvent
+====
+
+Tab işlemi için olay belirlemenizi sağlar.
+
+Standart Değeri: click
+Alabileceği Değerler: click, mouseenter, dblclick
+
+```
+$(".tab").pTab({
+    pEvent: 'mouseenter'
+});
+```
