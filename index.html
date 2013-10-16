@@ -1,71 +1,2327 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>jQuery Tab Eklentisi (pTab) - Tayfun Erbilen by tayfunerbilen</title>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Tab Eklentisi (pTab) - Erbilen.NET</title>
+	<link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/style.css?v=1381960404" type="text/css" media="all" />
+</head>
+<body>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>jQuery Tab Eklentisi (pTab) - Tayfun Erbilen</h1>
-        <p>jQuery pTab Plugin</p>
+	<div class="up">
+	Yukarı Çık
+	</div>
+	
+	<div style="text-align: center; background: #000; border-bottom: 1px solid #333; color: #fff; padding: 10px 0">
+	pTab eklentisi en son <strong>25 Mayıs 2013</strong> tarihinde saat <strong>03:23</strong>'de güncellendi.
+	</div>
 
-        <p class="view"><a href="https://github.com/tayfunerbilen/pTab">View the Project on GitHub <small>tayfunerbilen/pTab</small></a></p>
+	<div class="center">
+	
+		<div class="share">
+			<div class="facebook">
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/tr_TR/all.js#xfbml=1";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-like" data-href="http://www.erbilen.net/lab/pTab/" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true" data-colorscheme="dark"></div>
+			</div>
+			<div class="twitter" style="margin-top: 15px">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.erbilen.net/lab/pTab/" data-via="tayfunerbilen" data-lang="en" data-related="anywhereTheJavascriptAPI" data-count="vertical">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+		</div>
+	
+		<div class="right">
+			<div class="center">
+				<ul>
+					<li class="title">
+						HAKKINDA
+						<ul>
+							<li class="link"><a href="#nedir">pTab Nedir</a></li>
+							<li class="link"><a href="#nasil_kullanilir">Nasıl Kullanılır</a></li>
+							<li class="link"><a href="#tarayici_destegi">Tarayıcı Desteği</a></li>
+							<li class="link"><a href="#kim_yapti">Kim Yaptı</a></li>
+							<li class="link"><a href="#html_yapi">Standart HTML Yapısı</a></li>
+							<li class="link"><a href="#zorunlu_parametreler">Zorunlu Parametreler</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li class="title">
+						İNDİR
+						<ul>
+							<li class="link"><a href="#versiyon_1">pTab.js - Versiyon 1</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li class="title">
+						PARAMETRELER
+						<ul>
+							<li class="link"><a href="#pEvent">pEvent</a></li>
+							<li class="link"><a href="#pTab">pTab</a></li>
+							<li class="link"><a href="#pTabElem">pTabElem</a></li>
+							<li class="link"><a href="#pClass">pClass</a></li>
+							<li class="link"><a href="#pContent">pContent</a></li>
+							<li class="link"><a href="#pDuration">pDuration</a></li>
+							<li class="link"><a href="#pEffect">pEffect</a></li>
+							<li class="link"><a href="#pAutoHeight">pAutoHeight</a></li>
+							<li class="link"><a href="#pElemFunc">pElemFunc</a></li>
+							<li class="link"><a href="#pEventFunc">pEventFunc</a></li>
+							<li class="link"><a href="#pUi">pUi</a></li>
+							<li class="link"><a href="#pUiEffect">pUiEffect</a></li>
+							<li class="link"><a href="#pDebug">pDebug</a></li>
+							<li class="link"><a href="#pSlide">pSlide</a></li>
+							<li class="link"><a href="#pSlideWidth">pSlideWidth</a></li>
+							<li class="link"><a href="#pEasing">pEasing</a></li>
+							<li class="link"><a href="#pSlidePrev">pSlidePrev</a></li>
+							<li class="link"><a href="#pSlideNext">pSlideNext</a></li>
+							<li class="link"><a href="#pSlideLoop">pSlideLoop</a></li>
+							<li class="link"><a href="#pSlideLoopDuration">pSlideLoopDuration</a></li>
+							<li class="link"><a href="#pMouseWheel">pMouseWheel</a></li>
+							<li class="link"><a href="#pKeyboardEvent">pKeyboardEvent</a></li>
+							<li class="link"><a href="#pActiveTab">pActiveTab</a></li>
+							<li class="link"><a href="#pLoadFile">data-pLoadFile</a></li>
+							<li class="link"><a href="#pIframe">data-pIframe</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li class="title" style="border-right: 4px solid #1a6ec3; width: 235px">
+						ÖRNEKLER
+						<ul>
+							<li class="link"><a href="#demo1">Basit Tab Örneği</a></li>
+							<li class="link"><a href="#demo2">Fade Geçişli Tab Örneği</a></li>
+							<li class="link"><a href="#demo3">jQuery UI Efekti Uygulanmış Tab Örneği</a></li>
+							<li class="link"><a href="#demo4">Kayan Tab Örneği</a></li>
+							<li class="link"><a href="#demo11">Ajax ve Iframe Tab Örneği</a></li>
+							<li class="link"><a href="#demo5">Easing Fonksiyonu ile Kayan Tab Örneği</a></li>
+							<li class="link"><a href="#demo6">Önceki ve Sonraki Butonlu Tab Örneği</a></li>
+							<li class="link"><a href="#demo7">Otomatik Dönen Tab Örneği</a></li>
+							<li class="link"><a href="#demo8">Otomatik Dönen Tab Slider Örneği</a></li>
+							<li class="link"><a href="#demo9">MouseWheel Aktif Edilmiş Tab Örneği</a></li>
+							<li class="link"><a href="#demo10">Dikey Tab Örneği</a></li>
+							<li class="link"><a href="#demo12">Klavye Sağ ve Sol Tuşları Aktif Kayan Tab Örneği </a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="left">
+			<div class="leftInner">
+			
+				<h1 style="margin-top: 3px">HAKKINDA</h1>
+			
+				<div class="tip" id="nedir">
+					<h3>pTab Nedir?</h3>
+					<p>jQuery ile geliştirilmiş bir tab eklentisidir.</p>
+				</div>
+				
+				<div class="tip" id="nasil_kullanilir">
+					<h3>Nasıl Kullanılır?</h3>
+					<p>İndireceğiniz pTab.js dosyasını sayfanıza jquery'den sonra dahil edip hemen aşağıdaki parametreler ile kullanmaya başlayabilirsiniz.</p>
+				</div>
+				
+				<div class="tip" id="tarayici_destegi">
+					<h3>Tarayıcı Desteği</h3>
+					<p>jQuery ile geliştirildiği için <span class="td">tüm tarayıcılar</span>la uyumlu çalışmaktadır.</p>
+				</div>
+				
+				<div class="tip" id="kim_yapti">
+					<h3>Kim Yaptı</h3>
+					<p>Bu eklenti <strong>Tayfun Erbilen</strong> ve <strong>Mert Osman Başol</strong> tarafından hazırlanmıştır.</p>
+				</div>
+				
+				<div class="tip" id="html_yapi">
+					<h3>Standart HTML Yapısı</h3>
+					<p>pTab'ı kullanabilmek için aşağıdaki standart html yapısına sahip olmanız gerekir.</p>
+					<pre style="margin-top: 10px"><span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab</span><span class="hl1">"></span>
+    <span class="hl1">&lt;ul </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab-list</span><span class="hl1">"></span>
+        <span class="hl1">&lt;li>&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>1. tab<span class="hl1">&lt;/a>&lt;/li></span>
+        <span class="hl1">&lt;li>&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>2. tab<span class="hl1">&lt;/a>&lt;/li></span>
+        <span class="hl1">&lt;li>&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>3. tab<span class="hl1">&lt;/a>&lt;/li></span>
+    <span class="hl1">&lt;/ul></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        1. tab içeriği
+    <span class="hl1">&lt;/div></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        2. tab içeriği
+    <span class="hl1">&lt;/div></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        3. tab içeriği
+    <span class="hl1">&lt;/div></span>
+<span class="hl1">&lt;/div></span></pre>
+				</div>
+				
+				<div class="tip" id="zorunlu_parametreler">
+					<h3>Zorunlu Parametreler</h3>
+					<p>pTab'ın en basit kullanımında ihtiyaç duyduğu 3 temel parametre vardır ve bu parametrelerin belirtilmesi zorunludur.</p>
+					<pre style="margin-top: 10px"><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tab-list<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.tabContent<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<h1>İNDİR</h1>
+				
+				<div class="tip" id="versiyon_1">
+					<h3>pTab.js - Versiyon 1</h3>
+					<p style="margin-bottom: 10px">En son <span style="color: #fff">25 Mayıs 2013</span> tarihinde saat <span style="color: #fff">03:23</span>'de güncellendi.</p>
+					<p>
+						<strong>Sıkıştırılmış: </strong> <a href="js/pTab.min.js?v=1381960404" style="color: #347cc7">pTab.min.js</a> <span style="color: #555">(6,82 kb)</span>
+					</p>
+					<p>
+						<strong>Sıkıştırılmamış: </strong> <a href="js/pTab.js?v=1381960404" style="color: #347cc7">pTab.js</a> <span style="color: #555">(11,1 kb)</span>
+					</p>
+				</div>
+				
+				<h1>PARAMETRELER</h1>
+				
+				<div class="tip" id="pEvent">
+					<h3>pEvent <span class="par">parametre</span></h3>
+					<p>Tab işlemi için olay belirlemenizi sağlar.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>click</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>click, mouseenter, dblclick</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pEvent</span>: <span class="hl1">'</span>mouseenter<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pTab">
+					<h3>pTab <span class="par">parametre</span></h3>
+					<p>Tab işleminde tıklama nesnesini belirlemek için kullanılır. Yani hangi nesne içerisindeki nesnelere tıklandığında tab işlemi uygulanacağını belirkemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>ul</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>HTML Nesnesi</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pTabElem">
+					<h3>pTabElem <span class="par">parametre</span></h3>
+					<p>Bir üst parametrede belirlenen ana nesnenin içinde hangi nesneye tıklandığında tab işlemi gerçekleşeceğini belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>li</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>HTML Nesnesi</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pClass">
+					<h3>pClass <span class="par">parametre</span></h3>
+					<p>Tab işleminde atanacak aktif sınıfını belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>aktif</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Olası tüm CSS sınıf isimleri</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pContent">
+					<h3>pContent <span class="par">parametre</span></h3>
+					<p>Tab işleminde etkilenecek içerik nesnesini belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>.icerik</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Olası tüm CSS seçicileri</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pDuration">
+					<h3>pDuration <span class="par">parametre</span></h3>
+					<p>Tab işleminin oluş süresini belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>500</span> = 0.5 saniye</p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Milisaniye</span> (1000 = 1 saniye)</p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pEffect">
+					<h3>pEffect <span class="par">parametre</span></h3>
+					<p>Tab işleminde kullanılacak efektleri belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>show</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>show, fadeIn, slideDown</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pEffect</span>: <span class="hl1">'</span>fadeIn<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pAutoHeight">
+					<h3>pAutoHeight <span class="par">parametre</span></h3>
+					<p>Tab işleminde içerik nesnesinin yüksekliğini baz alarak tab yüksekliğini otomatik ayarlamak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pEffect</span>: <span class="hl1">'</span>fadeIn<span class="hl1">',</span>
+    <span class="hl4">pAutoHeight</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pElemFunc">
+					<h3>pElemFunc <span class="par">parametre</span></h3>
+					<p>Döngüye sokulan tab işlemleri için bir fonksiyon çalıştırır. Bu fonksiyon sadece o anki döngüye ait tab işleminde tek sefer için geçerli olacaktır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>function</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pEffect</span>: <span class="hl1">'</span>fadeIn<span class="hl1">',</span>
+    <span class="hl4">pAutoHeight</span>: <span class="hl5">true</span><span class="hl1">',</span>
+    <span class="hl4">pElemFunc</span>: <span class="hl5">function</span><span class="hl1"> (){</span>
+        <span class="hl1">$(</span><span class="hl3">this</span>.pTab <span class="hl1">+ " " + </span><span class="hl3">this</span>.pTabElem<span class="hl1"> + " span:first")</span><span class="hl5">.show</span>();
+    <span class="hl1">}</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pEventFunc">
+					<h3>pEventFunc <span class="par">parametre</span></h3>
+					<p>Döngüye sokulan tab işleminde bir olay (event) olduğunda çalışacak fonksiyondur. Her olayda bir kez çalışır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>function</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pEffect</span>: <span class="hl1">'</span>fadeIn<span class="hl1">',</span>
+    <span class="hl4">pAutoHeight</span>: <span class="hl5">true</span><span class="hl1">',</span>
+    <span class="hl4">pElemFunc</span>: <span class="hl5">function</span><span class="hl1"> (){</span>
+        <span class="hl1">$(</span><span class="hl3">this</span>.pTab <span class="hl1">+ " " + </span><span class="hl3">this</span>.pTabElem<span class="hl1"> + " span:first")</span><span class="hl5">.show</span>();
+    <span class="hl1">}, </span>
+    <span class="hl4">pEventFunc</span>: <span class="hl5">function</span><span class="hl1"> ( <span class="hl2">elem</span> ){</span>
+        <span class="hl1">$(</span><span class="hl3">this</span>.pTab <span class="hl1">+ " " + </span><span class="hl3">this</span>.pTabElem<span class="hl1"> + " span")</span><span class="hl5">.hide</span>();
+        <span class="hl1">$("span", </span><span class="hl2">elem</span><span class="hl1">)</span><span class="hl5">.show</span>();
+    <span class="hl1">}</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pUi">
+					<h3>pUi <span class="par">parametre</span></h3>
+					<p>Tab işleminde jQuery UI kütüphanesinin kullanılıp kullanılmayacağı belirlenir.</p>
+					<p>Kullanılması için <a href="http://code.jquery.com/ui/1.10.2/jquery-ui.js" target="_blank" style="color: #347cc7">jquery-ui.js</a> kütüphanesini yüklemeniz gerekiyor.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pUi</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pUiEffect">
+					<h3>pUiEffect <span class="par">parametre</span></h3>
+					<p>Tab işleminde jQuery UI kütüphanesi kullanılıyor ise UI kütüphanesine ait efetkleri uygulamak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>fade</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>fade, bounce, highlight, pulsate, shake, slide</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pUi</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pUiEffect</span>: <span class="hl1">'</span>bounce<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pDebug">
+					<h3>pDebug <span class="par">parametre</span></h3>
+					<p>Tab işleminde oluşacak olası hataların gözükmesi için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pUi</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pUiEffect</span>: <span class="hl1">'</span>bounce<span class="hl1">',</span>
+    <span class="hl4">pDebug</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlide">
+					<h3>pSlide <span class="par">parametre</span></h3>
+					<p>Tab işleminde içerik nesnesinin kayan içerik olup olmayacağı belirlenir.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlideWidth">
+					<h3>pSlideWidth <span class="par">parametre</span></h3>
+					<p>Tab işleminde içerik nesnesi kayan içerik olduğunda nesnenin genişliğini belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>0</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Sayısal Değer</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pEasing">
+					<h3>pEasing <span class="par">parametre</span></h3>
+					<p>Tab işleminde animasyon zamanı için easing fonksiyonlarını tanımlamak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>linear</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span><a href="http://api.jqueryui.com/easings/" target="_blank">Tüm Easing Fonksiyonları</a></span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span><span class="hl1">,</span>
+    <span class="hl4">pEasing</span>: <span class="hl1">'</span>easeInElastic<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlidePrev">
+					<h3>pSlidePrev <span class="par">parametre</span></h3>
+					<p>Tab geçiş işleminde önceki butonunu tanımlamak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Olası tüm CSS seçicileri</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span><span class="hl1">,</span>
+    <span class="hl4">pSlidePrev</span>: <span class="hl1">'</span>a.onceki<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlideNext">
+					<h3>pSlideNext <span class="par">parametre</span></h3>
+					<p>Tab geçiş işleminde sonraki butonunu tanımlamak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Olası tüm CSS seçicileri</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span><span class="hl1">,</span>
+    <span class="hl4">pSlidePrev</span>: <span class="hl1">'</span>a.onceki<span class="hl1">',</span>
+    <span class="hl4">pSlideNext</span>: <span class="hl1">'</span>a.sonraki<span class="hl1">'</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlideLoop">
+					<h3>pSlideLoop <span class="par">parametre</span></h3>
+					<p>Tab geçiş işlemini otomatik yapmak için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span><span class="hl1">,</span>
+    <span class="hl4">pSlidePrev</span>: <span class="hl1">'</span>a.onceki<span class="hl1">',</span>
+    <span class="hl4">pSlideNext</span>: <span class="hl1">'</span>a.sonraki<span class="hl1">',</span>
+    <span class="hl4">pSlideLoop</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pSlideLoopDuration">
+					<h3>pSlideLoopDuration <span class="par">parametre</span></h3>
+					<p>Tab otomatik geçiş işleminde zamanı belirlemek için kullanılır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>500</span> = 0.5 saniye</p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Milisaniye</span> (1000 = 1 saniye)</p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pSlide</span>: <span class="hl5">true</span><span class="hl1">,</span>
+    <span class="hl4">pSlideWidth</span>: <span class="hl5">550</span><span class="hl1">,</span>
+    <span class="hl4">pSlidePrev</span>: <span class="hl1">'</span>a.onceki<span class="hl1">',</span>
+    <span class="hl4">pSlideNext</span>: <span class="hl1">'</span>a.sonraki<span class="hl1">',</span>
+    <span class="hl4">pSlideLoop</span>: <span class="hl5">true</span><span class="hl1">',</span>
+    <span class="hl4">pSlideLoopDuration</span>: <span class="hl5">1000</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pMouseWheel">
+					<h3>pMouseWheel <span class="par">parametre</span></h3>
+					<p>Tab işleminde mousewheel eklentisinin aktif olup olmayacağı belirlenir. Eğer aktif edilir ise, fare scrollu ile tab geçiş işlemleri yapılabilir.</p>
+					<p>Kullanılması için <a href="http://archive.plugins.jquery.com/project/mousewheel" target="_blank" style="color: #347cc7">jquery.mousewheel.js</a> eklentisini yüklemeniz gerekiyor.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pMouseWheel</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pKeyboardEvent">
+					<h3>pKeyboardEvent <span class="par">parametre</span></h3>
+					<p>Tab geçişlerinin klavyenin sağ ve sol tuşlarıyla yapılmasını sağlar. Ancak bu işlem şuan için sadece <span style="color: #fff">IE8 ve üzerinde</span> stabil olarak çalışmaktadır.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>false</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>true, false</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pKeyboardEvent</span>: <span class="hl5">true</span>
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pActiveTab">
+					<h3>pActiveTab <span class="par">parametre</span></h3>
+					<p>Geçerli aktif tab sekmesini belirlemenizi sağlar. Eğer bu parametre belirtilmez ise ilk tab sekmesi aktif hale getirilir.</p>
+					<span class="parameterValue">
+						<p><strong>Standart Değeri:</strong> <span>0</span></p>
+						<p><strong>Alabileceği Değerler:</strong> <span>Tab Indis Değerleri (0-n) - Indis değerleri 0'dan başlar</span></p>
+					</span>
+					<pre><span class="hl1">$("</span><span class="hl2">.tab</span><span class="hl1">")</span><span class="hl3">.pTab</span><span class="hl1">({</span>
+    <span class="hl4">pTab</span>: <span class="hl1">'</span>.tabListe<span class="hl1">',</span>
+    <span class="hl4">pTabElem</span>: <span class="hl1">'</span>li<span class="hl1">',</span>
+    <span class="hl4">pClass</span>: <span class="hl1">'</span>pAktif<span class="hl1">',</span>
+    <span class="hl4">pContent</span>: <span class="hl1">'</span>.pIcerik<span class="hl1">',</span>
+    <span class="hl4">pDuration</span>: <span class="hl5">1000</span><span class="hl1">,</span>
+    <span class="hl4">pActiveTab</span>: <span class="hl5">2</span> /* 3. tab sekmesi aktif olsun */
+<span class="hl1">});</span></pre>
+				</div>
+				
+				<div class="tip" id="pLoadFile">
+					<h3>data-pLoadFile <span class="par">data parametre</span></h3>
+					<p>Dinamik olarak bir dosyayı tab içeriğine yükletmek için kullanılır.</p>
+					<pre style="margin-top: 10px"><span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab</span><span class="hl1">"></span>
+    <span class="hl1">&lt;ul </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab-list</span><span class="hl1">"></span>
+        <span class="hl1">&lt;li</span> <span class="hl2">data-pLoadFile</span><span class="hl1">="</span>ajax.html<span class="hl1">">&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>1. tab<span class="hl1">&lt;/a>&lt;/li></span>
+        <span class="hl1">&lt;li</span> <span class="hl2">data-pLoadFile</span><span class="hl1">="</span>deneme.txt<span class="hl1">">&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>2. tab<span class="hl1">&lt;/a>&lt;/li></span>
+    <span class="hl1">&lt;/ul></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        1. tab içeriği
+    <span class="hl1">&lt;/div></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        2. tab içeriği
+    <span class="hl1">&lt;/div></span>
+<span class="hl1">&lt;/div></span></pre>
+				</div>
+				
+				<div class="tip" id="pIframe">
+					<h3>data-pIframe <span class="par">data parametre</span></h3>
+					<p>Tab içeriğine iframe gömmek için kullanılır. Parametreler nesne olarak tanımlanır ve sadece örnekteki parametreler mevcuttur.</p>
+					<pre style="margin-top: 10px"><span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab</span><span class="hl1">"></span>
+    <span class="hl1">&lt;ul </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tab-list</span><span class="hl1">"></span>
+        <span class="hl1">&lt;li</span> <span class="hl2">data-pIframe</span><span class="hl1">='</span>{"url": "http://www.youtube.com/embed/De4bPBVnDEI", "width": "100%", "height":"350"}<span class="hl1">'>&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>1. tab<span class="hl1">&lt;/a>&lt;/li></span>
+        <span class="hl1">&lt;li</span> <span class="hl2">data-pIframe</span><span class="hl1">='</span>{"url": "http://www.erbilen.net", "width": "100%", "height":"350"}<span class="hl1">'>&lt;a </span><span class="hl3">href</span><span class="hl1">="</span><span class="hl2">#</span><span class="hl1">"></span>2. tab<span class="hl1">&lt;/a>&lt;/li></span>
+    <span class="hl1">&lt;/ul></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        1. tab içeriği
+    <span class="hl1">&lt;/div></span>
+    <span class="hl1">&lt;div </span><span class="hl3">class</span><span class="hl1">="</span><span class="hl2">tabContent</span><span class="hl1">"></span>
+        2. tab içeriği
+    <span class="hl1">&lt;/div></span>
+<span class="hl1">&lt;/div></span></pre>
+				</div>
+				
+				<h1>ÖRNEKLER</h1>
+				
+				<div class="tip" id="demo1">
+					
+					<h3>Basit Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab1">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #1)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
 
+	&lt;div class="pTabGenel pTab1">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
 
-        <ul>
-          <li><a href="https://github.com/tayfunerbilen/pTab/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/tayfunerbilen/pTab/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/tayfunerbilen/pTab">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab1").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent'
+	});
+	&lt;/script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo2">
+					
+					<h3>Fade Geçişli Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab2">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #2)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+	&lt;div class="pTabGenel pTab2">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab2").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pEffect: 'fadeIn'
+	});
+	&lt;/script>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo3">
+					
+					<h3>jQuery UI Efekti Uygulanmış Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab3">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #3)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+	&lt;div class="pTabGenel pTab3">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab3").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pUi: true,
+		pUiEffect: 'bounce',
+		pDebug: true
+	});
+	&lt;/script>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo4">
+					
+					<h3>Kayan Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab4">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #4)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+	&lt;div class="pTabGenel pTab4">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab4").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 340,
+		pSlide: true,
+		pSlideWidth: 668,
+		pAutoHeight: true
+	});
+	&lt;/script>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo11">
+					
+					<h3>Ajax ve Iframe Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab11">
+						<ul class="pTabListe">
+							<li data-pLoadFile="ajax1.html"><a href="#">Ajax Tab</a></li>
+							<li data-pIframe='{"url": "http://www.youtube.com/embed/De4bPBVnDEI", "width": "100%", "height":"350"}'><a href="#">Iframe Tab</a></li>
+							<li><a href="#">Standart tab</a></li>
+							<li><a href="#">Standart tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #11)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/tayfunerbilen">tayfunerbilen</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+	&lt;div class="pTabGenel pTab11">
+		&lt;ul class="pTabListe">
+			&lt;li data-pLoadFile="ajax1.html">&lt;a href="#">Ajax Tab&lt;/a>&lt;/li>
+			&lt;li data-pIframe='{"url": "http://www.youtube.com/embed/De4bPBVnDEI", "width": "100%", "height":"350"}'>&lt;a href="#">Iframe Tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Standart tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">Standart tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		ajax1.html adında bir dosya oluşturup bu örneği tekrar inceleyin.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		iframe tab içeriği
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab11").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 340,
+		pSlide: true,
+		pSlideWidth: 668,
+		pAutoHeight: true
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo5">
+					
+					<h3>Easing Fonksiyonu ile Kayan Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab5">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #5)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab5">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab5").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 668,
+		pEasing: 'easeOutElastic'
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo6">
+					
+					<h3>Önceki ve Sonraki Butonlu Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab6">
+						<ul class="pTabListe">
+							<li class="list"><a href="#">1. tab</a></li>
+							<li class="list"><a href="#">2. tab</a></li>
+							<li class="list"><a href="#">3. tab</a></li>
+							<li class="list"><a href="#">4. tab</a></li>
+							<li style="float: right; margin-right: 0"><a class="sonraki" href="#">Sonraki</a></li>
+							<li style="float: right"><a href="#" class="onceki">Önceki</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.<br /><br />Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #6)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab6">
+		&lt;ul class="pTabListe">
+			&lt;li class="list">&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">4. tab&lt;/a>&lt;/li>
+			&lt;li style="float: right; margin-right: 0">&lt;a class="sonraki" href="#">Sonraki&lt;/a>&lt;/li>
+			&lt;li style="float: right">&lt;a href="#" class="onceki">Önceki&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.&lt;br />&lt;br />Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab6").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pSlide: true,
+		pSlideWidth: 668,
+		pDuration: 400,
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pAutoHeight: true
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo7">
+					
+					<h3>Otomatik Dönen Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab7">
+						<ul class="pTabListe">
+							<li class="list"><a href="#">1. tab</a></li>
+							<li class="list"><a href="#">2. tab</a></li>
+							<li class="list"><a href="#">3. tab</a></li>
+							<li class="list"><a href="#">4. tab</a></li>
+							<li style="float: right; margin-right: 0"><a class="sonraki" href="#">Sonraki</a></li>
+							<li style="float: right"><a href="#" class="onceki">Önceki</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #7)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab7">
+		&lt;ul class="pTabListe">
+			&lt;li class="list">&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">4. tab&lt;/a>&lt;/li>
+			&lt;li style="float: right; margin-right: 0">&lt;a class="sonraki" href="#">Sonraki&lt;/a>&lt;/li>
+			&lt;li style="float: right">&lt;a href="#" class="onceki">Önceki&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab7").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 668,
+		pEasing: 'easeOutElastic',
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pSlideLoop: true,
+		pSlideLoopDuration: 1500
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo8">
+					
+					<h3>Otomatik Dönen Tab Slider Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab8">
+						<div style="width: 918px; position: relative; overflow: hidden!important">
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #1</span>
+								<img src="images/1.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #2</span>
+								<img src="images/2.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #3</span>
+								<img src="images/3.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #4</span>
+								<img src="images/4.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #5</span>
+								<img src="images/5.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #6</span>
+								<img src="images/1.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #7</span>
+								<img src="images/2.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #8</span>
+								<img src="images/3.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #9</span>
+								<img src="images/4.jpg" alt="" />
+							</div>
+							<div class="pTabContent">
+								<span class="sliderTitle">Başlık #10</span>
+								<img src="images/5.jpg" alt="" />
+							</div>
+						</div>
+						<ul class="pTabNumara">
+							<li class="list"><a href="#">1</a></li>
+							<li class="list"><a href="#">2</a></li>
+							<li class="list"><a href="#">3</a></li>
+							<li class="list"><a href="#">4</a></li>
+							<li class="list"><a href="#">5</a></li>
+							<li class="list"><a href="#">6</a></li>
+							<li class="list"><a href="#">7</a></li>
+							<li class="list"><a href="#">8</a></li>
+							<li class="list"><a href="#">9</a></li>
+							<li class="list"><a href="#">10</a></li>
+						</ul>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #8)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	.pTabGenel .pTabContent img {
+		width: 648px
+	}
+	.pTab8 .pTabContent {
+		line-height: 0; position: relative
+	}
+	.pTab8 .pTabContent span.sliderTitle {
+		position: absolute;
+		bottom: 20px;
+		opacity: .8;
+		filter: alpha(opacity=80);
+		left: 20px;
+		background: #111;
+		color: #fff;
+		font-size: 20px;
+		display: block;
+		line-height: auto;
+		padding: 18px 20px
+	}
+	.pTabNumara {
+		overflow: hidden
+	}
+	.pTabNumara li {
+		float: left; width: 10%; background: #222
+	}
+	.pTabNumara li a {
+		display: block;
+		text-align: center;
+		padding: 10px 0;
+		color: #fff
+	}
+	.pTabNumara li.pAktif a {
+		background: #111
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab8">
+		&lt;div style="width: 668px; position: relative; overflow: hidden!important">
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #1&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/1.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #2&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/2.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #3&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/3.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #4&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/4.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #5&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/5.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #6&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/1.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #7&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/2.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #8&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/3.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #9&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/4.jpg" alt="" height="365" />
+			&lt;/div>
+			&lt;div class="pTabContent">
+				&lt;span class="sliderTitle">Başlık #10&lt;/span>
+				&lt;img src="http://www.erbilen.net/lab/pTab/images/5.jpg" alt="" height="365" />
+			&lt;/div>
+		&lt;/div>
+		&lt;ul class="pTabNumara">
+			&lt;li class="list">&lt;a href="#">1&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">2&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">3&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">4&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">5&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">6&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">7&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">8&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">9&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">10&lt;/a>&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab8").pTab({
+		pTab: '.pTabNumara',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 668,
+		pEasing: 'easeOutElastic',
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pSlideLoop: true,
+		pSlideLoopDuration: 3500
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo9">
+					
+					<h3>MouseWheel Aktif Edilmiş Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab9">
+						<ul class="pTabListe">
+							<li class="list"><a href="#">1. tab</a></li>
+							<li class="list"><a href="#">2. tab</a></li>
+							<li class="list"><a href="#">3. tab</a></li>
+							<li class="list"><a href="#">4. tab</a></li>
+							<li style="float: right; margin-right: 0"><a class="sonraki" href="#">Sonraki</a></li>
+							<li style="float: right"><a href="#" class="onceki">Önceki</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #9)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab9">
+		&lt;ul class="pTabListe">
+			&lt;li class="list">&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li class="list">&lt;a href="#">4. tab&lt;/a>&lt;/li>
+			&lt;li style="float: right; margin-right: 0">&lt;a class="sonraki" href="#">Sonraki&lt;/a>&lt;/li>
+			&lt;li style="float: right">&lt;a href="#" class="onceki">Önceki&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.mousewheel.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab9").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 500,
+		pSlide: true,
+		pSlideWidth: 668,
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pMouseWheel: true
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo10">
+					
+					<h3>Dikey Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab10">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab <span style="color: yellow">Aktif</span></a></li>
+							<li><a href="#">2. tab <span style="color: yellow">Aktif</span></a></li>
+							<li><a href="#">3. tab <span style="color: yellow">Aktif</span></a></li>
+							<li><a href="#">4. tab <span style="color: yellow">Aktif</span></a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #10)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	.pTab10 {
+		overflow: hidden
+	}
+	.pTab10 ul.pTabListe {
+		float: left;
+		width: 190px
+	}
+	.pTab10 ul.pTabListe li {
+		float: none!important;
+		margin-right: 0
+	}
+	.pTab10 .pTabContent {
+		width: 458px!important;
+		float: right
+	}
+		overflow: hidden
+	}
+	.pTab10 ul.pTabListe {
+		float: left;
+		width: 190px
+	}
+	.pTab10 ul.pTabListe li {
+		float: none!important;
+		margin-right: 0
+	}
+	.pTab10 .pTabContent {
+		width: 458px!important;
+		float: right
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab10">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab &lt;span style="color: yellow">Aktif&lt;/span>&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab &lt;span style="color: yellow">Aktif&lt;/span>&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab &lt;span style="color: yellow">Aktif&lt;/span>&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab &lt;span style="color: yellow">Aktif&lt;/span>&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur. Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab10").pTab({
+		pEvent: 'mouseenter',
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pEffect: 'fadeIn',
+		pElemFunc: function(){
+			$(this.pTab + " " + this.pTabElem + " span:first").show();
+		},
+		pEventFunc: function(elem){
+			$(this.pTab + " " + this.pTabElem + " span").hide();
+			$("span", elem).show();
+		}
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="tip" id="demo12">
+					
+					<h3>Klavye Sağ ve Sol Tuşları Aktif Kayan Tab Örneği <span class="par">demo</span></h3>
+					
+					<div class="pTabGenel pTab12">
+						<ul class="pTabListe">
+							<li><a href="#">1. tab</a></li>
+							<li><a href="#">2. tab</a></li>
+							<li><a href="#">3. tab</a></li>
+							<li><a href="#">4. tab</a></li>
+						</ul>
+						<div class="pTabContent">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #055a7a">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #7a1b05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						<div class="pTabContent" style="background: #2e7a05">
+						Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+						</div>
+						
+						<p style="background: #333; padding: 3px 6px; margin-top: 10px">
+							Şuan için IE8 ve üzerinde çalışmaktadır. İşlemi görebilmek için örneğin üzerine farenizi getirip sağ ve sol yön tuşlarını kullanın.
+						</p>
+					</div>
+					
+					<div class="kaynak">
+						<a href="#">Kaynak Kodlarını Göster</a>
+						<div style="clear: both"></div>
+						<div class="kaynakKod">
+							<pre>&lt;!DOCTYPE HTML>
+&lt;html lang="en-US">
+&lt;head>
+	&lt;meta charset="UTF-8">
+	&lt;title>pTab (Demo #12)&lt;/title>
+	&lt;link rel="stylesheet" href="http://www.erbilen.net/lab/pTab/reset.css?v=1" />
+	&lt;style type="text/css">
+	body { margin: 10px }
+	.pTabGenel {
+		width: 668px
+	}
+	.pTabGenel ul.pTabListe {
+		overflow: hidden
+	}
+	.pTabGenel ul.pTabListe li {
+		float: left; margin-right: 10px
+	}
+	.pTabGenel ul.pTabListe li a {
+		display: block;
+		padding: 10px;
+		background: #333;
+		color: #fff
+	}
+	.pTabGenel ul.pTabListe li a span {
+		display: none
+	}
+	.pTabGenel ul.pTabListe li.pAktif a {
+		background: #111;
+	}
+	.pTabGenel .pTabContent {
+		background: #111;
+		padding: 10px;
+		line-height: 21px;
+		width: 648px;
+		color: #fff
+	}
+	&lt;/style>
+&lt;/head>
+&lt;body>
+
+	&lt;div class="pTabGenel pTab12">
+		&lt;ul class="pTabListe">
+			&lt;li>&lt;a href="#">1. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">2. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">3. tab&lt;/a>&lt;/li>
+			&lt;li>&lt;a href="#">4. tab&lt;/a>&lt;/li>
+		&lt;/ul>
+		&lt;div class="pTabContent">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #055a7a">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #7a1b05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+		&lt;div class="pTabContent" style="background: #2e7a05">
+		Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+		&lt;/div>
+	&lt;/div>
+
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1">&lt;/script>
+	&lt;script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404">&lt;/script>
+	&lt;script type="text/javascript">
+	$(".pTab12").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 668,
+		pEasing: 'easeOutElastic',
+		pKeyboardEvent: true
+	});
+	&lt;/script>
+
+&lt;/body>
+&lt;/html></pre>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		
+		<div style="clear: both"></div>
+	
+	</div>
+	
+	<!-- Script -->
+	<script type="text/javascript">
+	window.onerror = function(a,e,b){
+		alert(a);
+	}
+	</script>
+	<script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.js?v=1"></script>
+	<script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery-ui.min.js?v=1"></script>
+	<script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/jquery.mousewheel.min.js?v=1"></script>
+	<script type="text/javascript" src="http://www.erbilen.net/lab/pTab/js/pTab.js?v=1381960404"></script>
+	<script type="text/javascript">	
+	/* tab1 */
+	$(".pTab1").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent'
+	});
+	/* tab2 */
+	$(".pTab2").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pEffect: 'fadeIn'
+	});
+	/* tab3 */
+	$(".pTab3").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pUi: true,
+		pUiEffect: 'bounce',
+		pDebug: true
+	});
+	/* tab4 */
+	$(".pTab4").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 340,
+		pSlide: true,
+		pSlideWidth: 918
+	});
+	/* tab5 */
+	$(".pTab5").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 918,
+		pEasing: 'easeOutElastic',
+		pActiveTab: 3
+	});
+	/* tab6 */
+	$(".pTab6").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pSlide: true,
+		pSlideWidth: 918,
+		pDuration: 1000,
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pAutoHeight: true,
+		pActiveTab: 1
+	});
+	/* tab7 */
+	$(".pTab7").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 918,
+		pEasing: 'easeOutElastic',
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pSlideLoop: true,
+		pSlideLoopDuration: 1500
+	});
+	/* tab8 */
+	$(".pTab8").pTab({
+		pTab: '.pTabNumara',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 918,
+		pEasing: 'easeOutElastic',
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pSlideLoop: true,
+		pSlideLoopDuration: 3500
+	});
+	/* tab9 */
+	$(".pTab9").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li.list',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 500,
+		pSlide: true,
+		pSlideWidth: 918,
+		pSlidePrev: 'a.onceki',
+		pSlideNext: 'a.sonraki',
+		pMouseWheel: true,
+		pActiveTab: 2
+	});
+	/* tab10 */
+	$(".pTab10").pTab({
+		pEvent: 'mouseenter',
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pEffect: 'fadeIn',
+		pElemFunc: function(){
+			$(this.pTab + " " + this.pTabElem + " span:first").show();
+		},
+		pEventFunc: function(elem){
+			$(this.pTab + " " + this.pTabElem + " span").hide();
+			$("span", elem).show();
+		}
+	});
+	/* tab11 */
+	$(".pTab11").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pSlide: true,
+		pSlideWidth: 918,
+		pAutoHeight: true
+	});
+	/* tab12 */
+	$(".pTab12").pTab({
+		pTab: '.pTabListe',
+		pTabElem: 'li',
+		pClass: 'pAktif',
+		pContent: '.pTabContent',
+		pDuration: 1000,
+		pSlide: true,
+		pSlideWidth: 918,
+		pEasing: 'easeOutElastic',
+		pKeyboardEvent: true
+	});
+	$(window).scroll(function(){
+		if ( $(this).scrollTop() > 0 ){
+			$(".share").css("top", $(this).scrollTop() - 20);			
+			$(".up").show();			
+		} else {
+			$(".share").css("top", 20);
+			$(".up").hide();
+		}
+	});
+	$(".up").click(function(){
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+	});
+	$(".kaynak a").click(function(){
+		$(this).siblings(".kaynakKod").slideToggle();
+		return false
+	});
+	// $(".right ul li.link").hide();
+	$(".right ul li.title").click(function(){
+		$(this).find("ul").toggle();
+	});
+	$('.right ul li.link a').bind('click.smoothscroll',function (e) {
+		e.preventDefault();
+		var target = this.hash;
+			$target = $(target);
+		$('html, body').stop().animate({
+			'scrollTop': $target.offset().top - 15
+		}, 500, 'swing', function () {
+			window.location.hash = target;
+			$target.effect('highlight');
+		});
+	});
+	$("*").click(function(e){
+		if ( !$(e.target).is(".right ul li.title") ){
+			$('.right ul li.title ul').hide();
+		}
+	});
+	</script>
+
+</body>
 </html>
